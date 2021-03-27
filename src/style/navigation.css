@@ -1,13 +1,7 @@
-body{
-    font-family: "Open Sans";
-    background-image: url("../assets/background.png");
-    background-size: 100% 100%;
-    margin: 0px;
-    background-repeat: no-repeat;
-    
-  background-size: 100% 800px;
+body {
+    font-family: Verdana, sans-serif; 
+    margin:0;
 }
-
 
 
 ul{
@@ -19,7 +13,7 @@ ul{
 }
 
 li{
-    float : left;
+    float: left;
 }
 
 li a{
@@ -28,10 +22,11 @@ li a{
     color: rgb(255, 255, 255);
     text-align: center;
     text-decoration: none;
+    transition: background-color 0.35s ease;
 }
 
 a:hover{
-    background-color: rgb(20, 1, 1);
+    background-color: rgb(40, 1, 1);
 }
 
 #login{
