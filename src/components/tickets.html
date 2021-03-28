@@ -8,11 +8,11 @@
             <link rel="stylesheet" href="Tickets.css" />
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <script>
-                $(document).ready(function(){
-                        $(".checkout").on("keyup", ".quantity", function(){
-                            var price = +$(".price").data("price");
+$(document).ready(function(){
+                        $(".numberOfVisiter").on("keyup", "#child", function(){
+                            var price = 600;
                             var quantity = +$(this).val();
-                            $("#total").text("$" + price * quantity);
+                            $("#child-amount").text("$" + price * quantity);
                         })
                 })
             </script>  
@@ -69,24 +69,43 @@
                   <input type="date" id="date" name="date">
                 </div>
               </div>
-              <div style="display: flex;">
-              <div class="row">
-                <div class="col-50">
-                  <label for="child">No. of Child and senior citizen</label>
+              
+              <div class="numberOfVisiter" style="display: flex;">
+                <div class="row">
+                  <div class="col-50">
+                    <label for="child">No. of Child and senior citizen</label>
+                  </div>
+                  <div class="col-50">
+                    <input type="number" id="child" name="child">
+                  </div>
                 </div>
-                <div class="col-50">
-                  <input type="number" id="child" name="child">
+                <div class="row side">
+                  <div class="col-50">
+                    <label for="adult">No. of Adult</label>
+                  </div>
+                  <div class="col-50">
+                    <input type="number" id="adult" name="adult">
+                  </div>
                 </div>
               </div>
-              <div class="row side">
-                <div class="col-50">
-                  <label for="adult">No. of Adult</label>
+              <div class="price" style="display: flex;">
+                <div class="row">
+                  <div class="col-50">
+                    <label for="child-amount">Sub Total</label>
+                  </div>
+                  <div class="col-50">
+                    <input type="number" id="child-amount" name="child-amount" disabled>
+                  </div>
                 </div>
-                <div class="col-50">
-                  <input type="number" id="adult" name="adult">
+                <div class="row side">
+                  <div class="col-50">
+                    <label for="adult-amount">Sub Total</label>
+                  </div>
+                  <div class="col-50">
+                    <input type="number" id="adult-amount" name="adult-amount" disabled>
+                  </div>
                 </div>
               </div>
-            </div>
               
               <div class="row">
                 <input type="submit" value="Book Now">
@@ -95,12 +114,9 @@
           </div>
         <div class="checkout">
             <h1 class="title">Checkout</h1>
-            <p class="price" data-price="4.99">$4.99 per Juice</p>
-            <p class="description">Quantity:</p>
             <input type="text" class="quantity" value="1">
             
                 <p class="total">Total: <span id="total">$4.99</span></p>
-            
                 <button class="btn">Submit Order</button>
             
         </div>
