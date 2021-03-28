@@ -75,3 +75,7 @@ input[type=text],input[type=date],input[type=number	], select, textarea{
   .side{
 	  margin-left: 25%;
   }
+
+  .side1{
+	  margin-left: 34%;
+  }

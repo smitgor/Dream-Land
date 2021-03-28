@@ -94,33 +94,32 @@ $(document).ready(function(){
                     <label for="child-amount">Sub Total</label>
                   </div>
                   <div class="col-50">
-                    <input type="number" id="child-amount" name="child-amount" disabled>
+                    <input type="text" id="child-amount" name="child-amount" >
                   </div>
                 </div>
-                <div class="row side">
+                <div class="row side1">
                   <div class="col-50">
-                    <label for="adult-amount">Sub Total</label>
+                    <label for="adult-amount">Sub Total </label>
                   </div>
                   <div class="col-50">
-                    <input type="number" id="adult-amount" name="adult-amount" disabled>
+                    <input type="text" id="adult-amount" name="adult-amount" >
                   </div>
                 </div>
               </div>
-              
+              <div class="row">
+                <div class="col-25">
+                  <label for="Total">Total amount</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" id="total" name="total">
+                </div>
+              </div>
               <div class="row">
                 <input type="submit" value="Book Now">
               </div>
             </form>
           </div>
-        <div class="checkout">
-            <h1 class="title">Checkout</h1>
-            <input type="text" class="quantity" value="1">
-            
-                <p class="total">Total: <span id="total">$4.99</span></p>
-                <button class="btn">Submit Order</button>
-            
-        </div>
-
+        
         <div class="footer">
         
             <div class="column">
