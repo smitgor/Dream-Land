@@ -1,0 +1,38 @@
+
+.footer{
+    width: 100%;
+    bottom: 0;
+    background-color:rgb(196, 196, 196);
+}
+
+.column {
+    float: left;
+    width: 50%;
+    height: 200px;
+    background-color: rgb(196, 196, 196);
+}
+.column img{
+    margin-left: 80px;
+    margin-top: 40px;
+}
+
+.copyright{
+    margin-left: 80px;
+    margin-top: 10px;
+}
+
+.detail {
+    text-align: right;
+}
+
+.phone-number{
+    text-align: right;
+    color: rgb(4, 0, 255);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.mail{
+    text-align: right;
+    margin-top: 10px;
+}
