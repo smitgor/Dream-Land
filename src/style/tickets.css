@@ -42,6 +42,8 @@ input[type=text],input[type=date],input[type=number],input[type=email], select, 
 	padding: 20px;
 	max-width: 50%;
 	margin-left: 25%;
+	margin-top: 20px;
+	margin-bottom: 20px;
   }
   
   /* Floating column for labels: 25% width */

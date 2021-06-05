@@ -1,6 +1,9 @@
 @import url("navigation.css");
 @import url("footer.css");
-
+body{
+	background-image: url("../assets/endless_background2.jpg");
+	background-size: 170px;
+}
 .checkout {
 	height: 300px;
 	width: 400px;
@@ -37,11 +40,13 @@ input[type=text],input[type=date],input[type=number],input[type=email], select, 
   
   /* Style the container */
   .container {
-	border-radius: 5px;
-	background-color: #f2f2f2;
+	border-radius: 10px;
+	background-color: #f2f2f2ee;
 	padding: 20px;
 	max-width: 50%;
 	margin-left: 25%;
+	margin-top: 20px;
+	margin-bottom: 20px;
   }
   
   /* Floating column for labels: 25% width */
