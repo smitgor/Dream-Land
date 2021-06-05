@@ -8,12 +8,19 @@
             <link rel="stylesheet" href="Tickets.css" />
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <script>
-$(document).ready(function(){
-                        $(".numberOfVisiter").on("keyup", "#child", function(){
-                            var price = 600;
-                            var quantity = +$(this).val();
-                            $("#child-amount").text("Rs." + price * quantity);
-                        })
+                $(document).ready(function(){
+                  $("#child").on("input", function(){
+                    var price = 600;
+                    var quantity = $("#child").val();
+                    $("#child-amount").val(price*quantity);
+                    $("#total").html(price*quantity+(1000*$("#adult").val()));
+                  })
+                  $("#adult").on("input", function(){
+                    var price = 1000;
+                    var quantity = $("#adult").val();
+                    $("#adult-amount").val(price*quantity);
+                    $("#total").html(price*quantity+(600*$("#child").val()));
+                  })
                 })
             </script>  
     </head>
@@ -93,7 +100,7 @@ $(document).ready(function(){
                     <label for="child-amount">Sub Total</label>
                   </div>
                   <div class="col-50">
-                    <p id="child-amount"></p>
+                    <input type="text" id="child-amount">
                   </div>
                 </div>
                 <div class="row side1">
@@ -101,7 +108,7 @@ $(document).ready(function(){
                     <label for="adult-amount">Sub Total </label>
                   </div>
                   <div class="col-50">
-                    <p id="adult-amount"></p>
+                    <input type="text" id="adult-amount">
                   </div>
                 </div>
               </div>
@@ -118,7 +125,6 @@ $(document).ready(function(){
               </div>
             </form>
           </div>
-        
         <div class="footer">
         
             <div class="column">
