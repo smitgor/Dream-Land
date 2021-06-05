@@ -30,11 +30,16 @@ app.get('/checkout',function(req,res){
     contact = req.query.Contact;
     email = req.query.email;
     date = req.query.date;
+    child = req.query.child;
+    adult = req.query.adult;
     console.log(fname);
     console.log(lname);
     console.log(contact);
     console.log(email);
     console.log(date);
+    console.log(child);
+    console.log(adult);
+    res.sendFile(__dirname + "/"+"components"+"/" + "checkout.html");
 });
 var server = app.listen(8081, function() {
     var host = server.address().address;
