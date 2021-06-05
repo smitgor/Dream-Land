@@ -4,9 +4,19 @@
     <title></title>
     <link rel="stylesheet" href="../style/checkout.css">
     <link rel="icon" href="../assets/icons8-palace-100.png" type="image/x-icon">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
         function goBack() {
             window.history.back();
+        }
+        function done(){
+            swal({
+            title: "Good job!",
+            text: "You clicked the button!",
+            icon: "success",
+            button: "Aww yiss!",
+            });
+            
         }
     </script>
 </head>
@@ -18,77 +28,78 @@
             <p style="text-align: center;">Recheck Detailes before Confirming.</p>
         </div>
         <div class="details">
-            <div class="row">
-                <div class="col-25">
-                    <label for="fname">First Name</label>
+              
+                <div class="row">
+                    <div class="col-25">
+                        <label for="fname">First Name</label>
+                    </div>
+                    <div class="col-75">
+                        <p id="fname" class="verifyInput"><%= fname %></p>
+                    </div>
                 </div>
-                <div class="col-75">
-                    <p id="fname" class="verifyInput"><%= fname %></p>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="lname">Last Name</label>
+                    </div>
+                    <div class="col-75">
+                        <p id="lname" class="verifyInput"><%= lname %></p>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-25">
-                    <label for="lname">Last Name</label>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="contact">Contact No.</label>
+                    </div>
+                    <div class="col-75">
+                        <p id="contact" class="verifyInput"><%= contact %></p>
+                    </div>
                 </div>
-                <div class="col-75">
-                    <p id="lname" class="verifyInput"><%= lname %></p>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="Email">Email</label>
+                    </div>
+                    <div class="col-75">
+                        <p id="email" class="verifyInput"><%= email %></p>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-25">
-                    <label for="contact">Contact No.</label>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="date">Date of Visit</label>
+                    </div>
+                    <div class="col-75">
+                        <p id="date" class="verifyInput"><%= date %></p>
+                    </div>
                 </div>
-                <div class="col-75">
-                    <p id="contact" class="verifyInput"><%= contact %></p>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="child">Children</label>
+                    </div>
+                    <div class="col-75">
+                        <p id="Adult" class="verifyInput"><%= child %></p>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-25">
-                    <label for="Email">Email</label>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="adult">Adults </label>
+                    </div>
+                    <div class="col-75">
+                        <p id="Adult" class="verifyInput"><%= adult %></p>
+                    </div>
                 </div>
-                <div class="col-75">
-                    <p id="email" class="verifyInput"><%= email %></p>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="adult">Final amount </label>
+                    </div>
+                    <div class="col-75">
+                        <p id="Adult" class="verifyInput"><%= child*600+adult*1000 %></p>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-25">
-                    <label for="date">Date of Visit</label>
-                </div>
-                <div class="col-75">
-                    <p id="date" class="verifyInput"><%= date %></p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-25">
-                    <label for="child">Children</label>
-                </div>
-                <div class="col-75">
-                    <p id="Adult" class="verifyInput"><%= child %></p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-25">
-                    <label for="adult">Adults </label>
-                </div>
-                <div class="col-75">
-                    <p id="Adult" class="verifyInput"><%= adult %></p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-25">
-                    <label for="adult">Final amount </label>
-                </div>
-                <div class="col-75">
-                    <p id="Adult" class="verifyInput"><%= child*600+adult*1000 %></p>
-                </div>
-            </div>
 
+                
+                <div class="row">
+                    <input type="submit" value="Pay Now" onclick="done()">
+                    <input type="button" value="Go back" onclick="goBack()">
+                </div>
             
-            <div class="row">
-                <input type="submit" value="Pay Now">
-                <input type="button" value="Go back" onclick="goBack()">
-            </div>
-            </form>
         </div>
     </div>
     </div>

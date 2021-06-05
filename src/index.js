@@ -1,4 +1,5 @@
 var express = require('express');
+let alert = require('alert');  
 var app = express();
 var cookieParser = require('cookie-parser');
 app.use(cookieParser());
@@ -6,6 +7,10 @@ const path = require("path");
 var bodyParser = require("body-parser");
 var urlencoderParser = bodyParser.urlencoded({extended:true});
 const {sent}=require("process");
+const { url } = require('inspector');
+var swal=require('sweetalert');
+
+
 app.use(express.static(path.join(__dirname, '/')));
 
 app.get('/', function(req, res) {
@@ -40,6 +45,8 @@ app.get('/checkout',function(req,res){
         adult : req.query.adult
     });
 });
+
+
 var server = app.listen(8081, function() {
     var host = server.address().address;
     var port = server.address().port;
