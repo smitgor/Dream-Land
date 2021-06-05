@@ -4,6 +4,11 @@
     <title></title>
     <link rel="stylesheet" href="../style/checkout.css">
     <link rel="icon" href="../assets/icons8-palace-100.png" type="image/x-icon">
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 </head>
 
 <body>
@@ -18,7 +23,7 @@
                     <label for="fname">First Name</label>
                 </div>
                 <div class="col-75">
-                    <p id="fname">"First Name"</p>
+                    <p id="fname" class="verifyInput"><%= fname %></p>
                 </div>
             </div>
             <div class="row">
@@ -26,7 +31,7 @@
                     <label for="lname">Last Name</label>
                 </div>
                 <div class="col-75">
-                    <p id="lname">"Last Name"</p>
+                    <p id="lname" class="verifyInput"><%= lname %></p>
                 </div>
             </div>
             <div class="row">
@@ -34,7 +39,7 @@
                     <label for="contact">Contact No.</label>
                 </div>
                 <div class="col-75">
-                    <p id="contact">"Contact Number"</p>
+                    <p id="contact" class="verifyInput"><%= contact %></p>
                 </div>
             </div>
             <div class="row">
@@ -42,7 +47,7 @@
                     <label for="Email">Email</label>
                 </div>
                 <div class="col-75">
-                    <p id="email">"Email"</p>
+                    <p id="email" class="verifyInput"><%= email %></p>
                 </div>
             </div>
             <div class="row">
@@ -50,56 +55,38 @@
                     <label for="date">Date of Visit</label>
                 </div>
                 <div class="col-75">
-                    <p id="date">"Date of Visit"</p>
+                    <p id="date" class="verifyInput"><%= date %></p>
                 </div>
             </div>
-            <div class="numberOfVisiter" style="display: flex;">
-                <div class="row">
-                    <div class="col-50">
-                        <label for="child">No. of Child and senior citizen</label>
-                    </div>
-                    <div class="col-50">
-                        <p id="child">"Number of children and Senior Citizen"</p>
-                    </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="child">Children</label>
                 </div>
-                <div class="row side">
-                    <div class="col-50">
-                        <label for="adult">No. of Adult</label>
-                    </div>
-                    <div class="col-50">
-                        <p id="Adult">"Number of Adult"</p>
-                    </div>
+                <div class="col-75">
+                    <p id="Adult" class="verifyInput"><%= child %></p>
                 </div>
             </div>
-            <div class="price" style="display: flex;">
-                <div class="row">
-                    <div class="col-50">
-                        <label for="child-amount">Sub Total</label>
-                    </div>
-                    <div class="col-50">
-                        <p id="childstotal">"Child Sub Total"</p>
-                    </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="adult">Adults </label>
                 </div>
-                <div class="row side1">
-                    <div class="col-50">
-                        <label for="adult-amount">Sub Total </label>
-                    </div>
-                    <div class="col-50">
-                        <p id="adultstotal">"Adult Sub Total"</p>
-                    </div>
+                <div class="col-75">
+                    <p id="Adult" class="verifyInput"><%= adult %></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="adult">Final amount </label>
+                </div>
+                <div class="col-75">
+                    <p id="Adult" class="verifyInput"><%= child*600+adult*1000 %></p>
                 </div>
             </div>
 
+            
             <div class="row">
-                <div class="col-25">
-                    <label for="Total">Total amount : </label>
-                </div>
-                <div class="col-75">
-                    <P id="total">"Total Value"</P>
-                </div>
-            </div>
-            <div class="row">
-                <input type="submit" value="Confirm Booking">
+                <input type="submit" value="Pay Now">
+                <input type="button" value="Go back" onclick="goBack()">
             </div>
             </form>
         </div>
