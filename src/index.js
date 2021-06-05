@@ -16,16 +16,25 @@ app.get('/tickets.html', function(req, res) {
     res.sendFile(__dirname + "/"+"components"+"/"+"tickets.html");
 });
 
-app.get('/parkInfo.html', function(req, res) {
-    res.sendFile(__dirname + "/"+"components"+"/" + "parkInfo.html");
-});
-
 app.get('/ridesAndSlides.html', function(req, res) {
     res.sendFile(__dirname + "/"+"components"+"/" + "ridesAndSlides.html");
 });
 
 app.get('/contact.html', function(req, res) {
     res.sendFile(__dirname + "/"+"components"+"/" + "contact.html");
+});
+
+app.get('/checkout',function(req,res){
+    fname = req.query.firstname;
+    lname = req.query.lastname;
+    contact = req.query.Contact;
+    email = req.query.email;
+    date = req.query.date;
+    console.log(fname);
+    console.log(lname);
+    console.log(contact);
+    console.log(email);
+    console.log(date);
 });
 var server = app.listen(8081, function() {
     var host = server.address().address;
