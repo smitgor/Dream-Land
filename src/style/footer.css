@@ -9,7 +9,7 @@
     float: left;
     width: 50%;
     height: 200px;
-    background-color: rgb(196, 196, 196);
+    background-color: rgba(196, 196, 196, 0.918);
 }
 .column img{
     margin-left: 80px;
