@@ -32,7 +32,10 @@ input[type=submit]:hover {
   padding: 20px;
   max-width:50%; 
   margin-left: 25%;
+	margin-top: 20px;
+	margin-bottom: 20px;
   left: 50%;
+  border-radius: 10px;
 }
 
 .card {
@@ -43,10 +46,12 @@ input[type=submit]:hover {
   border-radius: 10px;
   max-width: 50%;
   margin-left: 25%;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 .container1 {
   border-radius: 5px;
   background-color: #f2f2f2;
-  padding: 20px; 
+  padding: 20px;
 }
