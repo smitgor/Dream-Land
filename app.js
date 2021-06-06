@@ -9,7 +9,7 @@ var urlencoderParser = bodyParser.urlencoded({extended:true});
 const {sent}=require("process");
 
 var MongoClient = require('mongodb').MongoClient;  
-
+var url="mongodb+srv://dbsmit:<password>@cluster0.ff23x.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 
 
@@ -55,7 +55,7 @@ app.get('/checkout',function(req,res){
         child : req.query.child,
         adult : req.query.adult
     };
-    MongoClient.connect("mongodb://localhost:27017/" , function(err, db) {  
+    MongoClient.connect(url , function(err, db) {  
         if (err) throw err;  
         var dbo = db.db("dreamLand");
         dbo.collection("tickets").insertOne(info, function(err, res) {  
@@ -74,7 +74,7 @@ app.get('/feedback',function(req,res){
         country : req.query.Country,
         subject : req.query.subject
     };
-    MongoClient.connect("mongodb://localhost:27017/" , function(err, db) {  
+    MongoClient.connect(url , function(err, db) {  
         if (err) throw err;  
         var dbo = db.db("dreamLand");
         dbo.collection("feedback").insertOne(info, function(err, res) {  
