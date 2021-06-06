@@ -126,7 +126,7 @@ app.get("/owner", (req, res) => {
                     </tr>
 
     `;
-    MongoClient.connect("mongodb://localhost:27017/" , function(err, db) {  
+    MongoClient.connect(url , function(err, db) {  
         if (err) throw err;  
         var dbo = db.db("dreamLand");
         dbo.collection("tickets").find().toArray(function(err,result){
