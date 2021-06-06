@@ -6,9 +6,6 @@
     <link rel="icon" href="../assets/icons8-palace-100.png" type="image/x-icon">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
-        function goBack() {
-            window.history.back();
-        }
         function done(){
             swal({
             title: "Ticket booked",
@@ -19,7 +16,6 @@
             .then((value)=>{
                 if(value){
                     window.location.href = "/";
-                    
                 }
             });
         }
@@ -102,7 +98,6 @@
                 
                 <div class="row">
                     <input type="button" value="Pay Now" onclick="done()">
-                    <input type="button" value="Go back" onclick="goBack()">
                 </div>  
             </form>
         </div>

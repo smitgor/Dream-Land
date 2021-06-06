@@ -7,7 +7,10 @@ const path = require("path");
 var bodyParser = require("body-parser");
 var urlencoderParser = bodyParser.urlencoded({extended:true});
 const {sent}=require("process");
-const { url } = require('inspector');
+
+var MongoClient = require('mongodb').MongoClient;  
+
+
 
 
 app.use(express.static(path.join(__dirname, '/')));
@@ -43,15 +46,27 @@ app.get('/checkout',function(req,res){
         child : req.query.child,
         adult : req.query.adult
     });
+    var info = {
+        fname : req.query.firstname,
+        lname : req.query.lastname,
+        contact : req.query.Contact,
+        email : req.query.email,
+        date : req.query.date,
+        child : req.query.child,
+        adult : req.query.adult
+    };
+    MongoClient.connect("mongodb://localhost:27017/" , function(err, db) {  
+        if (err) throw err;  
+        var dbo = db.db("dreamLand");
+        dbo.collection("tickets").insertOne(info, function(err, res) {  
+            if (err) throw err;  
+                console.log("1 record inserted");  
+            db.close();  
+        });  
+    });  
 });
 
-app.get('/', function (req, res) {
-    dbConn.then(function(db) {
-        delete req.body._id; // for safety reasons
-        db.collection('feedbacks').insertOne(req.body);
-    });    
-    res.send('Data received:\n' + JSON.stringify(req.body));
-});
+
 var server = app.listen(8081, function() {
     var host = server.address().address;
     var port = server.address().port;
