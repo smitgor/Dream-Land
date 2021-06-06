@@ -92,7 +92,7 @@ app.get("/owner", (req, res) => {
     <head>
         <title></title>
         <link rel="stylesheet" href="../style/owner.css">
-        <link rel="icon" href="../assets/icons8-palaqce-100.png" type="image/x-icon">
+        
     </head>
     
     <body>
@@ -106,7 +106,7 @@ app.get("/owner", (req, res) => {
             </ul>
         </div>
         <div class="box">
-            <div class="parkInfo">
+            <div class="heading">
                 <h1 style="text-align: center;">Dream Land Theme Park</h1>
             </div>
             <div class="ticket-data">
@@ -144,8 +144,7 @@ app.get("/owner", (req, res) => {
                     `
             });
             html += `</table>
-                    </div>
-                    <hr>`;
+                    </div>`;
             html += `<div class="feedback-data">
                     <table>
                         <tr>
@@ -170,19 +169,7 @@ app.get("/owner", (req, res) => {
             html += `</table>
                     </div>
                     </div>
-                    <div class="footer">
-                        <div class="column">
-                            <img src="../assets/logo1.52.png"><br>
-                            <div class="copyright">Dream Land © 2021. <a href="">Privacy policy</a></div> 
-                        </div>
-                        <div class="column">
-                            <div class="detail"><p><address>Address : 353 gandhi road,surat - 395010</Address></p></div>
-                            <div class="phone-number">026 1125-1125</div>
-                            <div class="mail">Email : <a href="mailto:dreamland@gmail.com">dreamland@gmail.com</a></div>
-                        </div>
-                    </div>
                     </body>
-                    
                     </html>
             `;
             res.send(html);

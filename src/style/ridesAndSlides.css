@@ -2,8 +2,8 @@
 @import url("footer.css");
   
 body{
-	background-image: url("../assets/BG6.jpg");
-	background-size: 250px;
+	background-image: url("../assets/BG1-1.jfif");
+	background-size: 280px;
 }
 
   .box {
@@ -34,6 +34,7 @@ body{
   }
   
   .zoom:hover {
+
     transform: scale(1.05); /* (105% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
   }
   
@@ -106,6 +107,13 @@ body{
   padding-right: 2px;
   padding-top: 1px;
   padding-bottom: 1px;
+  }
+
+  img{
+    opacity: 0.7;
+  }
+  img:hover{
+    opacity: 1.0;
   }
   
   @media screen and (max-width: 650px) {

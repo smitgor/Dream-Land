@@ -1,12 +1,26 @@
 @import url("navigation.css");
 @import url("footer.css");
-
+body{
+    background-image: url('../assets/BG12.jpg');
+    background-size: 400px;
+}
 
 table, th, td {
     border: 1px solid black;
+    border-radius: 6px;
     text-align: center;
-    background-color: #f2f2f2;
+    background-color: #f2f2f2ab;
+    margin: 15px;
 }
+.heading{
+    background-color: rgba(183, 242, 253, 0.884);
+    border-radius: 10px;
+    width:fit-content;
+    margin: auto;
+    padding:10px ;
+    margin-top:20px;
+  }
+  
 
 .ticket-data {
     width:max-content;
