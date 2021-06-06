@@ -60,12 +60,30 @@ app.get('/checkout',function(req,res){
         var dbo = db.db("dreamLand");
         dbo.collection("tickets").insertOne(info, function(err, res) {  
             if (err) throw err;  
-                console.log("1 record inserted");  
+                console.log("1 record inserted in feed back collecation");  
             db.close();  
         });  
     });  
 });
 
+app.get('/feedback',function(req,res){
+    res.sendFile(__dirname + "/"+"components"+"/" + "contact.html");
+    var info = {
+        fname : req.query.firstname,
+        lname : req.query.lastname,
+        country : req.query.Country,
+        subject : req.query.subject
+    };
+    MongoClient.connect("mongodb://localhost:27017/" , function(err, db) {  
+        if (err) throw err;  
+        var dbo = db.db("dreamLand");
+        dbo.collection("feedback").insertOne(info, function(err, res) {  
+            if (err) throw err;  
+                console.log("1 record inserted in feedback collection");  
+            db.close();  
+        });  
+    });
+});
 
 var server = app.listen(8081, function() {
     var host = server.address().address;
