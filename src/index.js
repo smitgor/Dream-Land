@@ -8,7 +8,6 @@ var bodyParser = require("body-parser");
 var urlencoderParser = bodyParser.urlencoded({extended:true});
 const {sent}=require("process");
 const { url } = require('inspector');
-var swal=require('sweetalert');
 
 
 app.use(express.static(path.join(__dirname, '/')));
@@ -46,7 +45,13 @@ app.get('/checkout',function(req,res){
     });
 });
 
-
+app.get('/', function (req, res) {
+    dbConn.then(function(db) {
+        delete req.body._id; // for safety reasons
+        db.collection('feedbacks').insertOne(req.body);
+    });    
+    res.send('Data received:\n' + JSON.stringify(req.body));
+});
 var server = app.listen(8081, function() {
     var host = server.address().address;
     var port = server.address().port;
