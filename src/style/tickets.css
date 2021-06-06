@@ -1,6 +1,11 @@
 @import url("navigation.css");
 @import url("footer.css");
 
+body{
+	background-image: url("../assets/BG_tickets1.jpg");
+	background-size: 300px;
+}
+
 .checkout {
 	height: 300px;
 	width: 400px;
@@ -38,7 +43,7 @@ input[type=text],input[type=date],input[type=number],input[type=email], select, 
   /* Style the container */
   .container {
 	border-radius: 5px;
-	background-color: #f2f2f2;
+	background-color: #f2f2f2e3;
 	padding: 20px;
 	max-width: 50%;
 	margin-left: 25%;
