@@ -177,6 +177,6 @@ app.get("/owner", (req, res) => {
         });
     });
 });
-app.set('port', process.env.PORT || 3000);
-
-var server = app.listen(3000);
+app.listen(process.env.PORT || 3000,()=>{
+    console.log('Server is running on 127.0.0.1:'+(process.env.PORT || 3000))
+})
