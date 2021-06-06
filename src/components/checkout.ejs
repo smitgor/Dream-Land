@@ -11,12 +11,17 @@
         }
         function done(){
             swal({
-            title: "Good job!",
-            text: "You clicked the button!",
+            title: "Ticket booked",
+            text: "Enjoy your best day in our park!",
             icon: "success",
-            button: "Aww yiss!",
+            button: "Go to Home",
+            })
+            .then((value)=>{
+                if(value){
+                    window.location.href = "/";
+                    
+                }
             });
-            
         }
     </script>
 </head>
@@ -28,7 +33,7 @@
             <p style="text-align: center;">Recheck Detailes before Confirming.</p>
         </div>
         <div class="details">
-              
+            <form>
                 <div class="row">
                     <div class="col-25">
                         <label for="fname">First Name</label>
@@ -96,10 +101,10 @@
 
                 
                 <div class="row">
-                    <input type="submit" value="Pay Now" onclick="done()">
+                    <input type="button" value="Pay Now" onclick="done()">
                     <input type="button" value="Go back" onclick="goBack()">
-                </div>
-            
+                </div>  
+            </form>
         </div>
     </div>
     </div>
