@@ -60,7 +60,7 @@ app.get('/checkout',function(req,res){
         var dbo = db.db("dreamLand");
         dbo.collection("tickets").insertOne(info, function(err, res) {  
             if (err) throw err;  
-                console.log("1 record inserted in feed back collecation");  
+                console.log("1 record inserted in teckites collection");  
             db.close();  
         });  
     });  
@@ -85,6 +85,111 @@ app.get('/feedback',function(req,res){
     });
 });
 
+app.get("/owner", (req, res) => {
+    var html=`<!DOCTYPE html>
+    <html>
+    
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="../style/owner.css">
+        <link rel="icon" href="../assets/icons8-palaqce-100.png" type="image/x-icon">
+    </head>
+    
+    <body>
+        <div class="navigation">
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./tickets.html">Tickets</a></li>
+                <li><a href="./ridesAndSlides.html">Rides & Slides</a></li>
+                <li><a href="./contact.html">Contact Us</a></li>
+                <li id=login><a href="">log in</a></li>
+            </ul>
+        </div>
+        <div class="box">
+            <div class="parkInfo">
+                <h1 style="text-align: center;">Dream Land Theme Park</h1>
+            </div>
+            <div class="ticket-data">
+                <table>
+                    <tr>
+                        <th colspan="8"><h1>Boocked Tickets</h1></th>
+                    </tr>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Contact No.</th>
+                        <th>Email</th>
+                        <th>Date</th>
+                        <th>No. of Child</th>
+                        <th>No. of Adult</th>
+                        <th>Total</th>
+                    </tr>
+
+    `;
+    MongoClient.connect("mongodb://localhost:27017/" , function(err, db) {  
+        if (err) throw err;  
+        var dbo = db.db("dreamLand");
+        dbo.collection("tickets").find().toArray(function(err,result){
+            if(err) throw err;
+            result.forEach(data=>{
+                html+=` <tr>
+                        <td> ${data.fname} </td>
+                        <td> ${data.lname} </td>
+                        <td> ${data.contact} </td>
+                        <td> ${data.email} </td>
+                        <td> ${data.date} </td>
+                        <td> ${data.child} </td>
+                        <td> ${data.adult} </td>
+                        <td> ${data.child*600+data.adult*1000} </td>
+                    `
+            });
+            html += `</table>
+                    </div>
+                    <hr>`;
+            html += `<div class="feedback-data">
+                    <table>
+                        <tr>
+                            <th colspan="4"><h1>Feedbacks</h1></th>
+                        </tr>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Country</th>
+                            <th>Feedback</th>
+                        </tr>
+                    `;
+            dbo.collection("feedback").find().toArray(function(err,result){
+                if(err) throw err;
+                result.forEach(data=>{
+                    html+=` <tr>
+                            <td> ${data.fname} </td>
+                            <td> ${data.lname} </td>
+                            <td> ${data.country} </td>
+                            <td> ${data.subject} </td>`
+                });
+            html += `</table>
+                    </div>
+                    </div>
+                    <div class="footer">
+                        <div class="column">
+                            <img src="../assets/logo1.52.png"><br>
+                            <div class="copyright">Dream Land © 2021. <a href="">Privacy policy</a></div> 
+                        </div>
+                        <div class="column">
+                            <div class="detail"><p><address>Address : 353 gandhi road,surat - 395010</Address></p></div>
+                            <div class="phone-number">026 1125-1125</div>
+                            <div class="mail">Email : <a href="mailto:dreamland@gmail.com">dreamland@gmail.com</a></div>
+                        </div>
+                    </div>
+                    </body>
+                    
+                    </html>
+            `;
+            res.send(html);
+            });
+        });
+    });
+});
 var server = app.listen(8081, function() {
     var host = server.address().address;
     var port = server.address().port;
