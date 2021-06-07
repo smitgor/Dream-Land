@@ -9,8 +9,7 @@ var urlencoderParser = bodyParser.urlencoded({extended:true});
 const {sent}=require("process");
 
 var MongoClient = require('mongodb').MongoClient;  
-var url="mongodb+srv://dbsmit:DBSMIT@cluster0.ff23x.mongodb.net/dreamLand?retryWrites=true&w=majority";
-//var url="mongodb://localhost:27017/";
+var url="mongodb://localhost:27017/";
 
 
 app.use(express.static(path.join(__dirname, '/')));
