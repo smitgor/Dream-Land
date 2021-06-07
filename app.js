@@ -10,7 +10,7 @@ const {sent}=require("process");
 
 var MongoClient = require('mongodb').MongoClient;  
 var url="mongodb+srv://dbsmit:DBSMIT@cluster0.ff23x.mongodb.net/dreamLand?retryWrites=true&w=majority";
-
+//var url="mongodb://localhost:27017/";
 
 
 app.use(express.static(path.join(__dirname, '/')));
@@ -60,7 +60,7 @@ app.get('/checkout',function(req,res){
         var dbo = db.db("dreamLand");
         dbo.collection("tickets").insertOne(info, function(err, res) {  
             if (err) throw err;  
-                console.log("1 record inserted in teckites collection");  
+                console.log("1 record inserted in tickets collection");  
             db.close();  
         });  
     });  
@@ -79,7 +79,7 @@ app.get('/feedback',function(req,res){
         var dbo = db.db("dreamLand");
         dbo.collection("feedback").insertOne(info, function(err, res) {  
             if (err) throw err;  
-                console.log("1 record inserted in feedback collection");  
+                console.log(info);  
             db.close();  
         });  
     });
